@@ -14,12 +14,12 @@ const Header: React.FC = () => {
 
     const [cityInput, setCityInput] = useState('')
 
-    const changeQuery = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
+    const changeQuery = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             dispatch(changeCityName(cityInput))
             setCityInput('')
         }
-    }, [])
+    }
 
     return (
         <header className={styles.header}>
