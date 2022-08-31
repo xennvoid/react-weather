@@ -19,7 +19,7 @@ const CurrentWeatherCard: React.FC = () => {
                         Today
                     </div>
                 </div>
-                <img src={`http://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}@2x.png`} alt="weather-icon" />
+                <img src={`https://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}@2x.png`} alt="weather-icon" />
             </div>
             <div className={styles.current_weather__city}>
                 {data?.city.name}

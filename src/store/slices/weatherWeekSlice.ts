@@ -30,7 +30,7 @@ export const getWeekWeather = createAsyncThunk<Weather, undefined, { rejectValue
             const daysCount = thunkAPI.getState().week.daysCount;
             const query = thunkAPI.getState().week.query;
 
-            const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&cnt=${daysCount}&appid=${key}`)
+            const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&cnt=${daysCount}&appid=${key}`)
 
             if (response.status !== 200)
                 throw thunkAPI.rejectWithValue("SERVER ERROR")

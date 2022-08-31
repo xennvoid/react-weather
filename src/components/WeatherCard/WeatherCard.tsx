@@ -19,7 +19,7 @@ const WeatherCard: React.FC<IWeatherCard> = ({ day, dayOfWeek, date }) => {
             <h3 className={`${styles.day} ${theme === 'light' ? styles.light : styles.dark}`}>{dayOfWeek}</h3>
             <div className={styles.date}>{date}</div>
             <div className={styles.img}>
-                <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="" />
+                <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="" />
             </div>
             <div className={`${styles.temp} ${theme === 'light' ? styles.light : styles.dark}`}>{day.main.temp.toFixed()}&deg;</div>
             <div className={styles.feelslike}>{day.main.feels_like.toFixed()}&deg;</div>
