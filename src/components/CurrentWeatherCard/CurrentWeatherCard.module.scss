@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+@import '../../styles/dark_mixin.scss';
+
+.current_weather__card {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: $shadow;
+    background: #fff;
+
+    @include dark-bg(#fff,$dark-gray);
+}
+
+.current_weather__card_wrapper{
+    
+}
+
+.current_weather__card__head {
+    display: flex;
+
+    img {
+        margin-left: 65px;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+
+        @media screen and (max-width:365px){
+            margin-left: 15px;
+        }
+    }
+}
+
+.current_weather__temp {
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 117px;
+    color: $main-blue;
+}
+
+.current_weather__day{
+    margin-bottom: 30px;
+    font-size: 40px;
+    line-height: 49px;
+
+    @include dark-text;
+}
+
+.current_weather__city {
+    font-size: 25px;
+    line-height: 30px;
+    color: $light-gray;
+}

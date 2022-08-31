@@ -1,0 +1,9 @@
+.current_weather {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    @media screen and (max-width:1200px){
+        flex-direction: column;
+    }
+}

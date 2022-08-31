@@ -1,0 +1,19 @@
+@mixin dark-bg($light,$dark) {
+    &.light {     
+        background: $light;
+    }
+    
+    &.dark {
+        background: $dark;
+    }
+}
+
+@mixin dark-text {
+    &.light {     
+        color: #000;
+    }
+    
+    &.dark {
+        color: #fff;
+    }
+}

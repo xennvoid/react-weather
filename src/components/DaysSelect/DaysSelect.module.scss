@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+@import '../../styles/dark_mixin';
+
+.days {
+    margin-top: 50px;
+}
+
+
+.days__change {
+    margin-right: 15px;
+    padding: 7px 20px 9px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: $shadow;
+    border: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+
+    @include dark-bg(#fff,$dark-gray);
+    @include dark-text;
+
+
+    @media screen and (max-width:520px){
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    &.active {
+        color:#fff;
+        background-color: $main-blue;
+    }
+}
+

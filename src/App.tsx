@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import './App.scss';
+import CurrentWeather from './components/CurrentWeather/CurrentWeather';
+import DaysForecast from './components/DaysForecast/DaysForecast';
+import DaySelect from './components/DaysSelect/DaySelect';
+import Header from './components/Header/Header';
+import { useThemeContext } from './context/themeContext';
+import { useAppDispatch, useAppSelector } from './hooks/typedHooks';
+import { getWeekWeather } from './store/slices/weatherWeekSlice';
 
 function App() {
+
+  const { theme } = useThemeContext();
+  const dispatch = useAppDispatch();
+  const { data, loading, query, daysCount } = useAppSelector(state => state.week)
+
+  useEffect(() => {
+    dispatch(getWeekWeather())
+    console.log(data)
+  }, [query, daysCount])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${theme}`}>
+      <div className="container">
+        <Header />
+        {
+          loading
+            ? null
+            : <>
+              <CurrentWeather />
+              <DaySelect />
+              <DaysForecast />
+            </>
+        }
+      </div>
     </div>
   );
 }

@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+@import '../../styles/dark_mixin';
+
+.weather__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 11px;
+    border-radius: 10px;
+    height: 220px;
+    background: $secondary-blue;
+
+    @include dark-bg($secondary-blue,$black);
+}
+
+.day {    
+    margin-bottom: 7px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+    @include dark-text;
+}
+
+.date {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 17px;
+    color: $light-gray;
+}
+
+.img {
+
+}
+
+.temp {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include dark-text;
+}
+
+.feelslike {
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 16px;
+    color: $light-gray;
+}
+
+.weather {
+    font-size: 13px;
+    line-height: 16px;
+    color: $light-gray;
+    text-transform: capitalize;
+}

@@ -1,0 +1,64 @@
+@import '../../styles/variables.scss';
+@import '../../styles/dark_mixin.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+
+    @media screen and (max-width:645px){
+        flex-wrap: wrap;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: $main-blue;
+    cursor: pointer;
+}
+
+.logo__img {
+    
+}
+
+.logo__text {
+    margin-left: 20px;
+
+    @media screen and (max-width:405px){
+        display: none;
+    }
+}
+
+.theme {
+    margin: 0 25px 0 auto;
+    cursor: pointer;
+
+    @media screen and (max-width:645px){
+        margin: 0 25px;
+    }
+}
+
+.search {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    @include dark-bg($secondary-blue,$dark-gray);
+
+    @media screen and (max-width:645px){
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+

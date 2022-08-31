@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+@import '../../styles/dark_mixin';
+
+.days__forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(149px,1fr));
+    gap: 20px;
+    margin-top: 7px;
+    padding: 20px 17px;
+    background: #FFFFFF;
+    box-shadow: $shadow;
+    border-radius: 0px 0px 20px 20px;
+
+    @include dark-bg(#fff,$dark-gray);
+
+    @media screen and (max-width:520px){
+        margin: 15px 0;
+    }
+}
