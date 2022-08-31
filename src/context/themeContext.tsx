@@ -25,8 +25,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         if (firstRender.current)
             localStorage.setItem('theme', JSON.stringify(theme))
         else {
-            const item = JSON.parse(localStorage.getItem('theme') || '')
-            item === '' ? setTheme('light') : setTheme(item)
+            const item = JSON.parse(localStorage.getItem('theme') || 'false')
+            item === false ? setTheme('light') : setTheme(item)
             firstRender.current = true;
         }
     }, [theme])
