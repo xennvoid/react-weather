@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
 import { RootState } from "..";
+import api from "../../axios";
 import { Weather } from "../types/weather";
 
 interface InitialState {
@@ -21,16 +21,13 @@ const initialState: InitialState = {
     activeFilter: 0
 }
 
-const key = '394b0c1be6a6843c9ce704d7fcc90f62'
-
-
 export const getWeekWeather = createAsyncThunk<Weather, undefined, { rejectValue: any, state: RootState }>('week/getWeather',
     async (_, thunkAPI) => {
         try {
             const daysCount = thunkAPI.getState().week.daysCount;
             const query = thunkAPI.getState().week.query;
 
-            const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&cnt=${daysCount}&appid=${key}`)
+            const response = await api.get(`/forecast?q=${query}&cnt=${daysCount}`)
 
             if (response.status !== 200)
                 throw thunkAPI.rejectWithValue("SERVER ERROR")
